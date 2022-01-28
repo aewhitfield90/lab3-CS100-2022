@@ -17,10 +17,7 @@ Person::Person(const char *name_, Person* father_, Person* mother_){
 
 Person::~Person(){
     delete[] children;
-    delete father;
-    delete mother;
     delete[] name;
-    delete this;
 }
 
 void Person::addChild(Person *newChild){
@@ -84,8 +81,8 @@ char* Person::compute_relation(int level){
 void expand(Person ***t, int *MAX){
   Person **temp = new Person*[2 * *MAX];
   memcpy(temp, *t, *MAX * sizeof(**t));
-  delete[] *t;
   *MAX *= 2;
+  delete[] *t;
   *t = temp;
 }
 
