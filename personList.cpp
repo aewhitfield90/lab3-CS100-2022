@@ -30,6 +30,7 @@ void PersonList::addPerson(const char* child_name, const char* father_name, cons
             mother = theList[i];
         }
     }
+    
    
     if(father == 0){
       // father_name is not in the theList so create a new person
